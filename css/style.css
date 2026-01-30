@@ -391,10 +391,10 @@ body {
     pointer-events: none;
 }
 .hero-text span {
-    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-    
-    -webkit-text-fill-color: transparent;
+    color: var(--accent);
+    font-weight: 700;
 }
+
 .btn {
     position: relative;
     overflow: hidden;
