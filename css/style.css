@@ -130,3 +130,55 @@ body {
     width: 280px;
     border-radius: 50%;
 }
+/* ===============================
+   Section Titles
+================================ */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ===============================
+   About Section
+================================ */
+.about {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.about-text {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* ===============================
+   Skills Section (Flexbox)
+================================ */
+.skills {
+    padding: 60px 0;
+    background: var(--bg-light);
+}
+
+.skills-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--white);
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
