@@ -1,6 +1,5 @@
-/* ===============================
-   Root Variables
-================================ */
+/*
+   Root Variables */
 :root {
     --primary: #0d6efd;
     --bg-light: #f8f9fa;
@@ -8,9 +7,8 @@
     --white: #ffffff;
 }
 
-/* ===============================
-   Reset & Base
-================================ */
+/*
+   Reset & Base */
 * {
     margin: 0;
     padding: 0;
@@ -22,18 +20,17 @@ body {
     color: var(--text-dark);
 }
 
-/* ===============================
-   Common Container
-================================ */
+/*
+   Common Container */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 0 20px;
 }
 
-/* ===============================
-   Navbar
-================================ */
+
+   /* Navbar */
+
 .navbar {
     background: var(--white);
     position: sticky;
@@ -73,9 +70,8 @@ body {
     color: var(--primary);
 }
 
-/* ===============================
-   Hero Section
-================================ */
+
+   Hero  */
 .hero {
     background: var(--bg-light);
     min-height: 90vh;
@@ -123,25 +119,25 @@ body {
     box-shadow: 0 8px 18px rgba(13,110,253,0.3);
 }
 
-/* ===============================
+/* 
    Hero Image
-================================ */
+ */
 .hero-image img {
     width: 280px;
     border-radius: 50%;
 }
-/* ===============================
+/* 
    Section Titles
-================================ */
+ */
 .section-title {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* ===============================
+/* 
    About Section
-================================ */
+ */
 .about {
     padding: 60px 0;
     background: var(--white);
@@ -155,9 +151,9 @@ body {
     text-align: center;
 }
 
-/* ===============================
+/* 
    Skills Section (Flexbox)
-================================ */
+ */
 .skills {
     padding: 60px 0;
     background: var(--bg-light);
@@ -182,9 +178,9 @@ body {
 .skill-card:hover {
     transform: translateY(-5px);
 }
-/* ===============================
+/* 
    Projects Section (Grid)
-================================ */
+ */
 .projects {
     padding: 60px 0;
     background: var(--white);
@@ -221,9 +217,9 @@ body {
     margin-bottom: 10px;
 }
 
-/* ===============================
+/* 
    Contact Section
-================================ */
+ */
 .contact {
     padding: 60px 0;
     background: var(--bg-light);
@@ -251,9 +247,9 @@ body {
     outline: none;
     border-color: var(--primary);
 }
-/* ===============================
+/* 
    Responsive Design
-================================ */
+ */
 
 /* Tablet View */
 @media (max-width: 900px) {
@@ -290,4 +286,52 @@ body {
     .project-card img {
         height: 140px;
     }
+}
+/* 
+   Animations
+ */
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation */
+.hero-text,
+.project-card,
+.skill-card {
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* ===============================
+   nth-child styling
+================================ */
+.skill-card:nth-child(odd) {
+    background: #eef4ff;
+}
+
+/* 
+   Position Example (Badge)
+ */
+.project-card {
+    position: relative;
+}
+
+.project-card::after {
+    content: "Project";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
 }
