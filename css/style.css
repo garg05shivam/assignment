@@ -392,7 +392,7 @@ body {
 }
 .hero-text span {
     background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-    -webkit-background-clip: text;
+    
     -webkit-text-fill-color: transparent;
 }
 .btn {
