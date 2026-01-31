@@ -1,24 +1,24 @@
-/* ===============================
-   Root Variables (Premium Dark)
-================================ */
+/* 
+   Root Variables (Final Palette)
+ */
 :root {
-    --accent: #38bdf8;
-    --accent-soft: rgba(56,189,248,0.15);
+    --accent: #4f9cff;                 /* calm blue */
+    --accent-soft: rgba(79,156,255,0.18);
 
-    --bg-header: #020617;
-    --bg-body: #0b1220;
-    --bg-card: #111827;
-    --bg-footer: #020617;
+    --bg-header: #020617;              /* darkest */
+    --bg-body: #0b1220;                /* main body */
+    --bg-card: #111827;                /* cards */
+    --bg-footer: #020617;              /* footer */
 
     --border-soft: #1e293b;
 
-    --text-main: #e5e7eb;
-    --text-muted: #9ca3af;
+    --text-main: #e5e7eb;              /* main text */
+    --text-muted: #9aa4b2;             /* secondary text */
 }
 
-/* ===============================
+/* 
    Reset & Base
-================================ */
+ */
 * {
     margin: 0;
     padding: 0;
@@ -32,18 +32,18 @@ body {
     line-height: 1.7;
 }
 
-/* ===============================
+/* 
    Container
-================================ */
+ */
 .container {
     max-width: 1100px;
     margin: auto;
     padding: 0 20px;
 }
 
-/* ===============================
+/* 
    Header / Navbar
-================================ */
+ */
 .navbar {
     background: var(--bg-header);
     position: sticky;
@@ -63,12 +63,11 @@ body {
     font-size: 1.6rem;
     font-weight: 700;
     color: var(--accent);
-    letter-spacing: 0.5px;
 }
 
 .nav-links {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
 .nav-links li {
@@ -85,11 +84,11 @@ body {
 .nav-links a::after {
     content: "";
     position: absolute;
+    left: 0;
+    bottom: -6px;
     width: 0;
     height: 2px;
     background: var(--accent);
-    left: 0;
-    bottom: -6px;
     transition: width 0.3s;
 }
 
@@ -97,13 +96,28 @@ body {
     width: 100%;
 }
 
-/* ===============================
-   Hero Section
-================================ */
+/* 
+   Hero Section (Home)
+ */
 .hero {
     min-height: 90vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* soft background highlight */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at top right,
+        rgba(79,156,255,0.12),
+        transparent 65%
+    );
+    pointer-events: none;
 }
 
 .hero-flex {
@@ -114,15 +128,17 @@ body {
 
 .hero-text {
     max-width: 520px;
+    animation: heroFade 1s ease forwards;
 }
 
 .hero-text h1 {
-    font-size: 3.1rem;
+    font-size: 3rem;
     margin-bottom: 15px;
 }
 
 .hero-text span {
     color: var(--accent);
+    font-weight: 700;
 }
 
 .hero-text p {
@@ -130,41 +146,43 @@ body {
     margin-bottom: 30px;
 }
 
-/* ===============================
-   Button (Glow Effect)
-================================ */
+/* 
+   Button
+ */
 .btn {
-    background: var(--accent);
+    background: linear-gradient(135deg, #4f9cff, #3b82f6);
     color: #020617;
     padding: 13px 34px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 600;
+    display: inline-block;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 30px var(--accent-soft);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
 }
 
-/* ===============================
+/* 
    Hero Image
-================================ */
+ */
 .hero-image img {
     width: 280px;
     border-radius: 50%;
-    border: 3px solid var(--border-soft);
-    box-shadow: 0 0 50px var(--accent-soft);
+    border: 2px solid var(--border-soft);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    animation: float 6s ease-in-out infinite;
 }
 
-/* ===============================
+/* 
    Section Titles
-================================ */
+ */
 .section-title {
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     position: relative;
 }
 
@@ -178,9 +196,9 @@ body {
     border-radius: 10px;
 }
 
-/* ===============================
+/* 
    Sections
-================================ */
+ */
 .about,
 .skills,
 .projects,
@@ -188,9 +206,9 @@ body {
     padding: 80px 0;
 }
 
-/* ===============================
-   About Text
-================================ */
+/* 
+   About
+ */
 .about-text {
     max-width: 800px;
     margin: auto;
@@ -198,9 +216,9 @@ body {
     color: var(--text-muted);
 }
 
-/* ===============================
-   Skills Cards
-================================ */
+/* 
+   Skills
+ */
 .skills-flex {
     display: flex;
     justify-content: center;
@@ -213,17 +231,16 @@ body {
     border: 1px solid var(--border-soft);
     padding: 18px 38px;
     border-radius: 14px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
 .skill-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 0 25px var(--accent-soft);
 }
 
-/* ===============================
-   Projects Grid
-================================ */
+/* 
+   Projects
+ */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -236,12 +253,11 @@ body {
     border-radius: 16px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 35px var(--accent-soft);
 }
 
 .project-card img {
@@ -273,9 +289,9 @@ body {
     border-radius: 12px;
 }
 
-/* ===============================
-   Contact Form
-================================ */
+/* 
+   Contact
+ */
 .contact-form {
     max-width: 500px;
     margin: auto;
@@ -293,16 +309,20 @@ body {
     border-radius: 10px;
 }
 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent);
-    box-shadow: 0 0 15px var(--accent-soft);
 }
 
-/* ===============================
+/* 
    Footer
-================================ */
+ */
 .footer {
     background: var(--bg-footer);
     border-top: 1px solid var(--border-soft);
@@ -327,9 +347,28 @@ body {
     color: var(--accent);
 }
 
-/* ===============================
+/* 
+   Animations
+ */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 
    Responsive
-================================ */
+ */
 @media (max-width: 900px) {
     .hero-flex {
         flex-direction: column;
@@ -348,99 +387,5 @@ body {
 
     .section-title {
         font-size: 1.6rem;
-    }
-}
-/* ===============================
-   Home Page Hero – Premium Look
-================================ */
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
-/* soft gradient overlay */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at top right,
-        rgba(56,189,248,0.15),
-        transparent 60%
-    );
-    pointer-events: none;
-}
-/* ===============================
-   Home Page Hero – Premium Look
-================================ */
-.hero {
-    position: relative;
-    overflow: hidden;
-}
-
-/* soft gradient overlay */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(
-        circle at top right,
-        rgba(56,189,248,0.15),
-        transparent 60%
-    );
-    pointer-events: none;
-}
-.hero-text span {
-    color: var(--accent);
-    font-weight: 700;
-}
-
-.btn {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.4),
-        transparent
-    );
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-}
-
-.btn:hover::after {
-    transform: translateX(100%);
-}
-.hero-image img {
-    animation: float 6s ease-in-out infinite;
-}
-
-/* floating animation */
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-.hero-text {
-    animation: heroFade 1s ease forwards;
-}
-
-@keyframes heroFade {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
