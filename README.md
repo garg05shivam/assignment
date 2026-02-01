@@ -63,7 +63,7 @@ Tablet
 Mobile devices
 🚀 Live Demo
 🔗 Live Website:
-https://garg05shivam.github.io/portfoilio-min-project/
+https://garg05shivam.github.io/assignment/
 
 📁 Project Structure
 portfolio-project/ │ ├── index.html ├── style.css ├── images/ └── README.md
